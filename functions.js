@@ -1,5 +1,6 @@
 var bot = require('./bot')
-var Discord = require('discord.io');
+var Discord = require('discord.io')
+var responses = require('./responses')
 
 // cVel ID: 413219296525811713
 // hMag ID: 413352362036428811
@@ -43,7 +44,19 @@ const dequeuer = function (boss, cmd, qCmd, roleID, userID, channelID, bot){
   })
 }
 
+const compliment = function(channelID, user, bot){
+  bot.sendMessage({
+    to: channelID,
+    message: randomCompliment()
+  })
+}
+
+const randomCompliment = function(){
+  return responses.complimentStore[Math.floor(Math.random()*responses.complimentStore.length)]
+}
+
 module.exports = {
   queuer: queuer,
-  dequeuer: dequeuer
+  dequeuer: dequeuer,
+  compliment: compliment
 }

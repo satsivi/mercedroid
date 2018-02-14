@@ -95,7 +95,24 @@
     "    ^waifu",
     "    ^brandykins",
     "    ^poop",
+    "    ^compliment",
     "```"
-]
-
+],
+  "complimentStore": [
+    "Have I mentioned you look great today?",
+    "I like your style.",
+    "On a scale of 1-10, you're an 11.",
+    "I like you almost more than I like Sylvidia.",
+    "You're like sunshine on a rainy day.",
+    "That color looks perfect on you.",
+    "You're one of a kind.",
+    "You're great the way you are!",
+    "You inspire me to be a better queen.",
+    "You're a light in the darkness.",
+    "I know I can count on you to seal the Black Mage without ending up frozen for hundreds of years.",
+    "You're my reason to smile.",
+    "You're something special.",
+    "This guild is better because you're in it.",
+    "You're my reason to fight."
+  ]
 }

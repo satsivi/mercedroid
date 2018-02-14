@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth');
 var responses = require('./responses')
-var {queuer, dequeuer} = require ('./functions')
+var { queuer, dequeuer, compliment } = require ('./functions')
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -57,6 +57,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         break
       case 'rmvhmag':
         dequeuer('Hard Magnus', 'rmvhmag', 'qhmag', '413352362036428811', userID, channelID, bot)
+        break
+      case 'compliment':
+        compliment(channelID, user, bot)
         break
     }
   }
