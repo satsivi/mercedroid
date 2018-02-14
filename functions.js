@@ -55,8 +55,16 @@ const randomCompliment = function(){
   return responses.complimentStore[Math.floor(Math.random()*responses.complimentStore.length)]
 }
 
+const flipCoin = function(channelID, bot){
+  bot.sendMessage({
+    to: channelID,
+    message: Math.random() > 0.5 ? responses.heads : responses.tails
+  })
+}
+
 module.exports = {
   queuer: queuer,
   dequeuer: dequeuer,
-  compliment: compliment
+  compliment: compliment,
+  flipCoin: flipCoin
 }

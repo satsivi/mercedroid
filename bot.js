@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth');
 var responses = require('./responses')
-var { queuer, dequeuer, compliment } = require ('./functions')
+var { queuer, dequeuer, compliment, flipCoin } = require ('./functions')
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -61,6 +61,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
       case 'compliment':
         compliment(channelID, user, bot)
         break
+      case 'flipcoin':
+        flipCoin(channelID, bot)
+        break
+
     }
   }
 });
