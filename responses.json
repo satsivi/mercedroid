@@ -67,5 +67,35 @@
     "|__ Bosses: Bossing parties",
     "```"
   ],
-  "carries": "Sign up for carries here: <https://goo.gl/XgxPS2>"
+  "carries": "Sign up for carries here: <https://goo.gl/XgxPS2>",
+  "poop": ":toilet:",
+  "help": [
+    "```",
+    "Mercedes Bot",
+    "",
+    "Actually Useful Commands:",
+    "    ^bossrange        Displays estimated range required for various bosses",
+    "    ^cap              Displays bosses and how much GP they give",
+    "    ^prequests        Displays recommended prequests (WIP)",
+    "    ^directory        Displays Tama server directory/information",
+    "    ^help             Displays commands.",
+    "",
+    "Carries:",
+    "    ^carries          Displays spreadsheet link for guild carries",
+    "  Queuer/Dequeuer: Format: ^[q/rmv][boss tag]",
+    "    ^q[boss]            Adds current user from [boss] queue",
+    "    ^rmv[boss]          Removes current user [boss] queue",
+    "",
+    "    Boss Tags:",
+    "      Chaos Vellum: cvel",
+    "      Hard Magnus:  hmag",
+    "    Example: ^qcvel, ^rmvhmag",
+    "",
+    "Memes:",
+    "    ^waifu",
+    "    ^brandykins",
+    "    ^poop",
+    "```"
+]
+
 }
