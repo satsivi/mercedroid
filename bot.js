@@ -1,7 +1,7 @@
 var Discord = require('discord.io');
 var logger = require('winston');
-var responses = require('./responses')
-var { queuer, dequeuer, compliment, flipCoin, eightBall } = require ('./functions')
+var responses = require('./responses');
+var { queuer, dequeuer, compliment, flipCoin, eightBall } = require ('./functions');
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -11,7 +11,7 @@ logger.add(logger.transports.Console, {
 logger.level = 'debug';
 // Initialize Discord Bot
 var bot = new Discord.Client({
-  token: process.env.authToken || require("auth").token,
+  token: process.env.authToken || require("./auth").token,
   autorun: true
 });
 
