@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth');
 var responses = require('./responses')
-var { queuer, dequeuer, compliment, flipCoin } = require ('./functions')
+var { queuer, dequeuer, compliment, flipCoin, eightBall } = require ('./functions')
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -15,6 +15,7 @@ var bot = new Discord.Client({
   token: auth.token,
   autorun: true
 });
+
 bot.on('ready', function (evt) {
   logger.info('Connected');
   logger.info('Logged in as: ');
@@ -40,7 +41,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
       case 'directory':
       case 'carries':
       case 'poop':
+      case 'thegrind':
       case 'help':
+      case 'whycap':
         bot.sendMessage({
           to: channelID,
           message: format(responses[cmd])
@@ -64,7 +67,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
       case 'flipcoin':
         flipCoin(channelID, bot)
         break
-
+      case 'ask':
+        eightBall(channelID, bot)
+        break
+      case 'sethelp':
+          bot.setPresence({
+            game: {
+              name: "^help"
+            }
+          });
     }
   }
 });

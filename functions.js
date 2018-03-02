@@ -62,9 +62,21 @@ const flipCoin = function(channelID, bot){
   })
 }
 
+const eightBall = function(channelID, bot){
+  let min = 0
+  let max = responses.eightBallResponse.length
+  let random = Math.floor(Math.random() * (max - min))
+
+  bot.sendMessage({
+    to: channelID,
+    message: responses.eightBallResponse[random]
+  })
+}
+
 module.exports = {
   queuer: queuer,
   dequeuer: dequeuer,
   compliment: compliment,
-  flipCoin: flipCoin
+  flipCoin: flipCoin,
+  eightBall: eightBall
 }
