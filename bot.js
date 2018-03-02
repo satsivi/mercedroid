@@ -1,6 +1,5 @@
 var Discord = require('discord.io');
 var logger = require('winston');
-var auth = require('./auth');
 var responses = require('./responses')
 var { queuer, dequeuer, compliment, flipCoin, eightBall } = require ('./functions')
 
@@ -12,7 +11,7 @@ logger.add(logger.transports.Console, {
 logger.level = 'debug';
 // Initialize Discord Bot
 var bot = new Discord.Client({
-  token: auth.token || process.env.authToken,
+  token: process.env.authToken || require("auth").token,
   autorun: true
 });
 
